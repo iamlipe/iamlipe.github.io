@@ -1,0 +1,30 @@
+@mixin smallPhonesHeight {
+  @media only screen and (max-height: 650px) {
+    @content;
+  }
+}
+@mixin smallPhones {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+@mixin phones {
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
+}
+@mixin tablets {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin laptops {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin desktops {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
