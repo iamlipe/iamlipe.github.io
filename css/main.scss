@@ -1,0 +1,602 @@
+@import 'media-queries';
+
+$background: #111010;
+$homebox: #04BF55;
+$aboubox: #8806BF;
+$projectbox: #049DD9;
+$contactbox: #F2BB13;
+$fontcolor: #F1F2F0;
+
+@font-face {
+  font-family: cool;
+  src: url(../font/MonumentExtended-Bold.woff);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: $background;
+  color: $fontcolor;
+  font-family: cool;
+  overflow: hidden;
+}
+
+.home {
+  height: 120vh;
+  @include phones {
+    height: 150vh;
+  }
+  .spin img {
+    width: 100px;
+  }
+  .spin {
+    position: absolute; 
+    top: 240px; 
+    left: 71%; 
+    animation: spin 10s linear infinite;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg);}
+  }
+
+  .home-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .home-presentation{
+      position: absolute;
+      left: 8.33%;
+      top: 15.76%;
+      h1 {
+        text-transform: uppercase;
+        &:nth-child(1) {
+          font-size: 20px;
+          color: $homebox;
+        }
+        &:nth-child(2){
+          margin: -6px 0px 0px 100px;
+          font-size: 14px;
+          color: transparent;
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-stroke-color: white;
+        }
+        &:nth-child(3) {
+          font-size: 16px;
+          margin: -6px 0px 0px 50px ;
+        }
+        @include phones {
+          &:nth-child(1) {
+            font-size: 26px;
+          }
+          &:nth-child(2) {
+            font-size: 16px;
+            margin: -7px 0px 0px 132px;
+          }
+          &:nth-child(3) {
+            font-size: 18px;
+            margin: -7px 0px 0px 66px;
+          }
+        }
+        @include tablets {
+          &:nth-child(1) {
+            font-size: 30px;
+          }
+          &:nth-child(2) {
+            font-size: 17px;
+            margin: -8px 0px 0px 151px;
+          }
+          &:nth-child(3) {
+            font-size: 21px;
+            margin: -8px 0px 0px 75px;
+          }
+        }
+        @include laptops {
+          &:nth-child(1) {
+            font-size: 35px;
+          }
+          &:nth-child(2) {
+            font-size: 18px;
+            margin: -9px 0px 0px 176px;
+          }
+          &:nth-child(3) {
+            font-size: 23px;
+            margin: -9px 0px 0px 88px;
+          }
+        }
+        @include desktops {
+          &:nth-child(1) {
+            font-size: 40px;
+          }
+          &:nth-child(2) {
+            font-size: 20px;
+            margin: -10px 0px 0px 200px;
+          }
+          &:nth-child(3) {
+            font-size: 25px;
+            margin: -10px 0px 0px 100px;
+          }
+        }
+      }
+      @include phones {
+        top: 200px;
+        left: 50px;
+      }
+      @include tablets {
+        top: 172px;
+        left: 92px;
+      }
+      @include laptops {
+        top: 134.67px;
+        left: 148px;
+      }
+      @include desktops {
+        top: 100px;
+        left: 200px;
+      }
+    }
+    .text-translate-x {
+      align-self: center;
+      overflow: hidden;
+      h1 {
+        display:none;
+        margin-left: -1000px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        line-height: 300px;
+        transform: scaleY(0.1);
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+        mix-blend-mode:darken;
+        @include laptops {
+          display: inline-block;
+          font-size: 100px;
+          &:nth-child(2) {
+            margin: -220px 0px 0px 0px;
+          }
+        }
+        @include desktops {
+          font-size: 120px;
+          &:nth-child(2) {
+            margin: -205px 0px 0px 0px;
+          }
+        }
+      }
+    }
+    .home-box {
+      display: inline-block;
+      position: absolute;
+      z-index: -1;
+      top: 85vh;
+      width: 300px;    
+      height: 385px;
+      background-color: $homebox;
+      overflow: hidden;
+      @include phones {
+        top: 680px;
+        width: 430px;    
+        height: 550px;
+      }
+      @include tablets {
+        top: 630px;
+        width: 505px;
+        height: 650px;
+      }
+      @include laptops {
+        top: 565px;
+        width: 605px;
+        height: 780px;
+      }
+      @include desktops {
+        top: 500px;
+        width: 700px;    
+        height: 900px;
+      }
+      .aj1-home{
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.about {
+  height: 120vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  .about-title {
+    height: 7%;
+    @include phones {
+      height: 8%;
+    }
+    @include tablets {
+      height: 10%;
+    }
+    @include laptops {
+      height: 13%;
+    }
+    @include desktops {
+      height: 15%;
+    }
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+      @include phones {
+        font-size: 43px;
+      }
+      @include tablets {
+        font-size: 50px;
+      }
+      @include laptops {
+        font-size: 61px;
+      }
+      @include desktops {
+        font-size: 70px;
+      }
+    }
+  }
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    height: 95%;
+    overflow: hidden;
+    @include phones {
+      height: 92%;
+    }
+    @include tablets {
+      height: 90%;
+    }
+    @include laptops {
+      height: 87%;
+      flex-direction: row;
+      margin-top: -100px;
+    }
+    @include desktops {
+      height: 85%;
+    }
+    .about-text {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      height:fit-content;
+      padding: 0px 20px;
+      overflow: hidden;
+      margin-top: 20px;
+      @include laptops {
+        margin-top: 0px;
+        padding: 0px 50px;
+        width: 50%;
+      }
+      @include desktops {
+        padding: 0px 100px;
+      }
+      h3 {
+        text-align: center;
+        font-size: 12px;
+        @include smallPhonesHeight {
+          font-size: 10px;
+        }
+        @include phones {
+          font-size: 15px;
+        }
+        @include tablets {
+          font-size: 17px;
+        }
+        @include laptops {
+          font-size: 20px;
+        }
+        @include desktops {
+          font-size: 22px;
+        }
+      }
+    }
+
+    .about-design {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      height: 75%;
+      overflow: hidden;
+      margin-top: -100px;
+      @include smallPhonesHeight {
+        height: 70%;
+        margin-top: 0;
+      }
+      @include phones {
+        margin-top: -66px;
+      }
+      @include tablets {
+        margin-top: -33px;
+      }
+      @include laptops {
+        margin-top: 0px;
+        width: 50%;
+      }
+      .about-box {
+        display: inline-block;
+        align-self: center;
+        // position: absolute;
+        // z-index: 2;
+        width: 300px;
+        height: 335px;
+        background-color: $aboubox;
+        overflow: hidden;
+        @include phones {
+          width: 350px;
+          height: 385px;
+        }
+        @include tablets {
+          width: 375px;
+          height: 420px;
+        }
+        @include laptops {
+          width: 415px;
+          height: 460px;
+        }
+        @include desktops {
+          width: 450px;
+          height: 500px;
+        }
+        .like-about {
+          align-self: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150vh;
+  width: 100%;
+  overflow: hidden;
+  .work-title {
+    height: 7%;
+    @include phones {
+      height: 8%;
+    }
+    @include tablets {
+      height: 10%;
+    }
+    @include laptops {
+      height: 13%;
+    }
+    @include desktops {
+      height: 15%;
+    }
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+      @include phones {
+        font-size: 43px;
+      }
+      @include tablets {
+        font-size: 50px;
+      }
+      @include laptops {
+        font-size: 61px;
+      }
+      @include desktops {
+        font-size: 70px;
+      }
+    }
+  }
+  .work-content {
+    align-self: center;
+    padding: 2%;
+    height: 80%;
+    width: 88%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    overflow: hidden;
+    margin-top: -10vh;
+    @include phones {
+      margin-top: -10vh;
+      width: 85%;
+    }
+    @include tablets {
+      margin-top: -13vh;
+      width: 83%;
+    }
+    @include laptops {
+      margin-top: -15vh;
+      width: 80%;
+    }
+    @include desktops {
+      margin-top: -18vh;
+      width: 78%;
+    }
+    .work-box {
+      width: 100%;
+      height: 24%;
+      background-color: $projectbox;
+      @include phones {
+      }
+      @include tablets {
+      }
+      @include laptops {
+        width: 48%;
+        height: 48%;
+      }
+      @include desktops {
+      }
+    }
+  }
+  .work-see {
+    position: absolute;
+    top: 370vh;
+    z-index: 5;
+    height: 5%;
+    @include phones {
+      top: 400vh;
+    }
+  }
+}
+
+.contact {
+  height: 120vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  .contact-title {
+    height: 7%;
+    @include phones {
+      height: 8%;
+    }
+    @include tablets {
+      height: 10%;
+    }
+    @include laptops {
+      height: 13%;
+    }
+    @include desktops {
+      height: 15%;
+    }
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+      @include phones {
+        font-size: 43px;
+      }
+      @include tablets {
+        font-size: 50px;
+      }
+      @include laptops {
+        font-size: 61px;
+      }
+      @include desktops {
+        font-size: 70px;
+      }
+    }
+  }
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    overflow: hidden;
+    @include phones {
+      height: 92%;
+    }
+    @include tablets {
+      height: 90%;
+    }
+    @include laptops {
+      height: 87%;
+      flex-direction: row;
+      margin-top: -100px;
+    }
+    @include desktops {
+      height: 85%;
+    }
+    .contact-design {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      height: 75%;
+      overflow: hidden;
+      margin-top: -100px;
+      @include smallPhonesHeight {
+        margin-top: -20px;
+      }
+      @include phones {
+        margin-top: -66px;
+      }
+      @include tablets {
+        margin-top: -33px;
+      }
+      @include laptops {
+        margin-top: 0px;
+        width: 50%;
+      }
+      .contact-box {
+        display: flex;
+        align-self: center;
+        // position: absolute;
+        // z-index: 2;
+        width: 300px;
+        height: 335px;
+        background-color: $contactbox;
+        overflow: hidden;
+        @include phones {
+          width: 350px;
+          height: 385px;
+        }
+        @include tablets {
+          width: 375px;
+          height: 420px;
+        }
+        @include laptops {
+          width: 415px;
+          height: 460px;
+        }
+        @include desktops {
+          width: 450px;
+          height: 500px;
+        }
+        .donuts-content {
+          align-self: center;
+          width: 100%;
+        }
+      }
+    }
+    .contact-text {
+      align-self: center;
+      width: 100%;
+      padding: 0px 50px;
+      overflow: hidden;
+      margin-top: -50px;
+      text-align: center;
+      @include laptops {
+        width: 50%;
+      }
+      @include desktops {
+        padding: 0px 100px;
+      }
+      h3 {
+        width: 100%;
+        font-size: 12px;
+        @include phones {
+          font-size: 15px;
+        }
+        @include tablets {
+          font-size: 17px;
+        }
+        @include laptops {
+          font-size: 20px;
+        }
+        @include desktops {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
