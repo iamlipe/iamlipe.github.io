@@ -28,23 +28,10 @@ body {
 }
 
 .home {
-  height: 120vh;
-  @include phones {
-    height: 150vh;
+  height: 100vh;
+  @include laptops {
+    height: 120vh;
   }
-  .spin img {
-    width: 100px;
-  }
-  .spin {
-    position: absolute; 
-    top: 240px; 
-    left: 71%; 
-    animation: spin 10s linear infinite;
-  }
-  @keyframes spin {
-    to { transform: rotate(360deg);}
-  }
-
   .home-content {
     height: 100%;
     width: 100%;
@@ -52,6 +39,41 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    .spin {
+      position: absolute; 
+      z-index: 3;
+      right: 5%;
+      top: 380px;
+      animation: spin 10s linear infinite;
+      width: 50px;
+      @include smallPhonesHeight {
+        top: 240px;
+      }
+      @include phones {
+        top: 400px;
+        right: 80px;
+        width: 66px;
+      }
+      @include tablets {
+        top: 340px;
+        right: 100px;
+        width: 75px;
+      }
+      @include laptops {
+        top: 250px;
+        right: 165px;
+        width: 88px;
+      }
+      @include desktops {
+        top: 160px;
+        right: 210px;
+        width: 100px;
+        
+      }
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg);}
+    }
     .home-presentation{
       position: absolute;
       left: 8.33%;
@@ -63,7 +85,6 @@ body {
           color: $homebox;
         }
         &:nth-child(2){
-          margin: -6px 0px 0px 100px;
           font-size: 14px;
           color: transparent;
           -webkit-text-stroke-width: 0.5px;
@@ -71,7 +92,12 @@ body {
         }
         &:nth-child(3) {
           font-size: 16px;
-          margin: -6px 0px 0px 50px ;
+        }
+        &:nth-child(4) {
+          font-size: 14px;
+          color: transparent;
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-stroke-color: white;
         }
         @include phones {
           &:nth-child(1) {
@@ -79,12 +105,13 @@ body {
           }
           &:nth-child(2) {
             font-size: 16px;
-            margin: -7px 0px 0px 132px;
           }
           &:nth-child(3) {
             font-size: 18px;
-            margin: -7px 0px 0px 66px;
           }
+        }
+        &:nth-child(4) {
+          font-size: 16px;
         }
         @include tablets {
           &:nth-child(1) {
@@ -92,11 +119,12 @@ body {
           }
           &:nth-child(2) {
             font-size: 17px;
-            margin: -8px 0px 0px 151px;
           }
           &:nth-child(3) {
             font-size: 21px;
-            margin: -8px 0px 0px 75px;
+          }
+          &:nth-child(4) {
+            font-size: 17px;
           }
         }
         @include laptops {
@@ -105,11 +133,14 @@ body {
           }
           &:nth-child(2) {
             font-size: 18px;
-            margin: -9px 0px 0px 176px;
           }
           &:nth-child(3) {
+            display: none;
             font-size: 23px;
-            margin: -9px 0px 0px 88px;
+          }
+          &:nth-child(4) {
+            display: none;
+            font-size: 17px;
           }
         }
         @include desktops {
@@ -118,11 +149,9 @@ body {
           }
           &:nth-child(2) {
             font-size: 20px;
-            margin: -10px 0px 0px 200px;
           }
           &:nth-child(3) {
             font-size: 25px;
-            margin: -10px 0px 0px 100px;
           }
         }
       }
@@ -149,6 +178,7 @@ body {
       h1 {
         display:none;
         margin-left: -1000px;
+        margin-top: 300px;
         text-transform: uppercase;
         white-space: nowrap;
         line-height: 300px;
@@ -172,10 +202,10 @@ body {
       }
     }
     .home-box {
-      display: inline-block;
+      display: flex;
       position: absolute;
       z-index: -1;
-      top: 85vh;
+      top: 70vh;
       width: 300px;    
       height: 385px;
       background-color: $homebox;
@@ -196,7 +226,7 @@ body {
         height: 780px;
       }
       @include desktops {
-        top: 500px;
+        top: 550px;
         width: 700px;    
         height: 900px;
       }
@@ -271,6 +301,7 @@ body {
       justify-content: center;
       align-self: center;
       width: 100%;
+      max-width: 700px;
       height:fit-content;
       padding: 0px 20px;
       overflow: hidden;
@@ -443,11 +474,11 @@ body {
   }
   .work-see {
     position: absolute;
-    top: 370vh;
+    top: 350vh;
     z-index: 5;
     height: 5%;
-    @include phones {
-      top: 400vh;
+    @include laptops {
+      top: 370vh;
     }
   }
 }
@@ -599,4 +630,20 @@ footer {
   display: flex;
   justify-content: center;
   padding: 25px;
+  h4 {
+    text-align: center;
+    font-size: 10px;
+    @include phones {
+
+    }
+    @include tablets {
+
+    }
+    @include laptops {
+
+    }
+    @include desktops {
+      
+    }
+  }
 }
