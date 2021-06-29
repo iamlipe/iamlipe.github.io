@@ -26,3 +26,15 @@ window.onload = function () {
 		},
 	})
 }
+
+// OPEN MENU
+const menu = document.getElementById('menu-burguer')
+
+menu.addEventListener('click', function() {
+	const element = document.getElementById('content-menu')
+	if (element.classList.contains('open')) {
+		element.classList.remove('open')
+	} else {
+		element.classList.add('open')
+	}
+})

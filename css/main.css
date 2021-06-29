@@ -19,6 +19,143 @@ body {
   overflow: hidden;
 }
 
+input {
+  overflow: hidden;
+  display: none;
+}
+
+input:checked ~ label .menu {
+  width: 350px;
+}
+
+input:checked ~ label .menu .btn-burguer {
+  margin-left: 0px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+input:checked ~ label .menu .btn-burguer:nth-child(3) {
+  margin-top: -7px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+input:checked ~ label .menu .btn-burguer:nth-child(1) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform: translateX(-280px);
+          transform: translateX(-280px);
+}
+
+input:checked ~ label .content-menu {
+  -webkit-box-shadow: 0 0 0 130vw #111010, 0 0 0 130vh #111010;
+          box-shadow: 0 0 0 130vw #111010, 0 0 0 130vh #111010;
+  opacity: 1;
+}
+
+input:checked ~ label .menu-list {
+  opacity: 1;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: fixed;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  top: 30px;
+  right: 30px;
+}
+
+.menu .btn-burguer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  width: 35px;
+  height: 7px;
+  opacity: 0.8;
+  -webkit-transition: 0.6s ease-in-out;
+  transition: 0.6s ease-in-out;
+}
+
+.menu .btn-burguer:nth-child(1) {
+  margin-left: -4px;
+  -webkit-transform: rotate(2deg);
+          transform: rotate(2deg);
+  background-color: #F2BB13;
+}
+
+.menu .btn-burguer:nth-child(2) {
+  margin-left: -12px;
+  background-color: #8806BF;
+  -webkit-transform: rotate(-7deg);
+          transform: rotate(-7deg);
+  z-index: 1;
+}
+
+.menu .btn-burguer:nth-child(3) {
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+  background-color: #04BF55;
+}
+
+.content-menu {
+  position: fixed;
+  opacity: 0;
+  top: 25px;
+  right: 18px;
+  z-index: 8;
+  background-color: #111010;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 0 0 #111010, 0 0 0 0 #111010;
+          box-shadow: 0 0 0 0 #111010, 0 0 0 0 #111010;
+  -webkit-transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.menu-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 11;
+  opacity: 0;
+  -webkit-transition: 0.3s cubic-bezier(0, 1.07, 0, 1.02);
+  transition: 0.3s cubic-bezier(0, 1.07, 0, 1.02);
+}
+
+.menu-list ul {
+  list-style: none;
+}
+
+.menu-list ul li {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+.menu-list ul li a {
+  text-decoration: none;
+  color: #F1F2F0;
+}
+
 .home {
   height: 100vh;
 }
@@ -243,9 +380,6 @@ body {
   line-height: 300px;
   -webkit-transform: scaleY(0.1);
           transform: scaleY(0.1);
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
-  mix-blend-mode: darken;
 }
 
 @media only screen and (min-width: 992px) {

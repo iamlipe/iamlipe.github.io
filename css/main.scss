@@ -27,6 +27,108 @@ body {
   overflow: hidden;
 }
 
+input {
+  overflow: hidden;
+  display: none;
+}
+
+input:checked ~ label .menu {
+  width: 350px;
+}
+
+input:checked ~ label .menu .btn-burguer {
+  margin-left: 0px;
+  transform: rotate(45deg);
+  &:nth-child(3) {
+    margin-top: -7px;
+    transform: rotate(135deg);
+  }
+  &:nth-child(1) {
+    opacity: 0;
+    transform: rotate(0deg);
+    transform: translateX(-280px);
+  }
+}
+
+input:checked ~ label .content-menu {
+  box-shadow: 0 0 0 130vw $background, 0 0 0 130vh $background;
+  opacity: 1;
+}
+input:checked ~ label .menu-list {
+  opacity: 1;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: fixed;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  top: 30px;
+  right: 30px;
+  .btn-burguer {
+    display: flex;
+    position: relative;
+    width: 35px;
+    height: 7px;
+    opacity: 0.8;
+    transition: 0.6s ease-in-out;
+    &:nth-child(1) {
+      margin-left: -4px;
+      transform: rotate(2deg);
+      background-color: $contactbox;
+    }
+    &:nth-child(2) {
+      margin-left: -12px;
+      background-color: $aboubox;
+      transform: rotate(-7deg);
+      z-index: 1;
+    }
+    &:nth-child(3) {
+      transform: rotate(5deg);
+      background-color: $homebox;
+    }
+  }
+}
+.content-menu {
+  position: fixed;
+  opacity: 0;
+  top: 25px;
+  right: 18px;
+  z-index: 8;
+  background-color: $background;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 $background, 0 0 0 0 $background;
+  transition: 0.6s cubic-bezier(.19,1,.22,1);
+}
+
+.menu-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0, 1.07, 0, 1.02);
+  ul {
+    list-style: none;
+    li {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 50px;
+      a {
+        text-decoration: none;
+        color: $fontcolor;
+      }
+    }
+  }
+}
+
 .home {
   height: 100vh;
   @include laptops {
@@ -183,9 +285,9 @@ body {
         white-space: nowrap;
         line-height: 300px;
         transform: scaleY(0.1);
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: black;
-        mix-blend-mode:darken;
+        // -webkit-text-stroke-width: 2px;
+        // -webkit-text-stroke-color: black;
+        // mix-blend-mode:darken;
         @include laptops {
           display: inline-block;
           font-size: 100px;
