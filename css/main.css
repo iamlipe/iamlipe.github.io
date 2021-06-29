@@ -25,7 +25,7 @@ input {
 }
 
 input:checked ~ label .menu {
-  width: 350px;
+  width: 340px;
 }
 
 input:checked ~ label .menu .btn-burguer {
