@@ -735,17 +735,5 @@ footer {
   h4 {
     text-align: center;
     font-size: 10px;
-    @include phones {
-
-    }
-    @include tablets {
-
-    }
-    @include laptops {
-
-    }
-    @include desktops {
-      
-    }
   }
 }
