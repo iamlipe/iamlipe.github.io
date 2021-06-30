@@ -27,14 +27,28 @@ window.onload = function () {
 	})
 }
 
-// OPEN MENU
+window.addEventListener('scroll', function () {
+	// console.log(window.scrollY)
+	if (window.scrollY >= 60) {
+		document.getElementById('nav').classList.remove('open')
+		document.getElementById('nav').classList.add('hidden')
+	} else {
+		document.getElementById('nav').classList.remove('hidden')
+		document.getElementById('nav').classList.add('open')
+	}
+});
+
 const menu = document.getElementById('menu-burguer')
 
 menu.addEventListener('click', function() {
-	const element = document.getElementById('content-menu')
-	if (element.classList.contains('open')) {
-		element.classList.remove('open')
+	// console.log(menu.checked)
+	if (menu.checked === true) {
+		document.getElementById('content-menu').classList.add('open')
+		document.documentElement.style.overflow = 'hidden';
+		document.body.scroll = "no"
 	} else {
-		element.classList.add('open')
+		document.getElementById('content-menu').classList.remove('open')
+		document.documentElement.style.overflow = 'auto';
+		document.body.scroll = 'yes'
 	}
-})
+});
