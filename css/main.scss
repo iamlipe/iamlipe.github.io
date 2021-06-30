@@ -28,104 +28,176 @@ body {
 }
 
 input {
-  overflow: hidden;
   display: none;
 }
 
-input:checked ~ label .menu {
-  width: 350px;
-}
-
 input:checked ~ label .menu .btn-burguer {
-  margin-left: 0px;
-  transform: rotate(45deg);
-  &:nth-child(3) {
-    margin-top: -7px;
+  &:nth-child(2) {
     transform: rotate(135deg);
   }
+  &:nth-child(3) {
+    width: 30px;
+    margin-top: -5px;
+    transform: rotate(225deg);
+  }
   &:nth-child(1) {
-    opacity: 0;
-    transform: rotate(0deg);
     transform: translateX(-280px);
   }
 }
 
-input:checked ~ label .content-menu {
-  box-shadow: 0 0 0 130vw $background, 0 0 0 130vh $background;
-  opacity: 1;
-}
-input:checked ~ label .menu-list {
-  opacity: 1;
+.nav {
+  width: 100%; 
+  height: 100px; 
+  display: flex; 
+  justify-content: flex-end; 
+  position: fixed; 
+  z-index: 10;
+  .nav-list {
+    margin-right: -30px;
+    display: flex; 
+    justify-content: flex-end;
+    @include laptops {
+      margin: 0px 50px;
+    }
+    .nav-list-item {
+      display: none;
+      margin: 5px 30px; 
+      align-self: center;
+      &:nth-child(5) {
+        display: flex;
+        width: 50px; 
+        height: 50px
+      }
+      @include laptops {
+        display: flex;
+        &:nth-child(5) {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .menu {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
-  position: fixed;
-  z-index: 10;
-  width: 50px;
-  height: 50px;
-  top: 30px;
-  right: 30px;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  top: 10px;
   .btn-burguer {
     display: flex;
     position: relative;
-    width: 35px;
-    height: 7px;
-    opacity: 0.8;
+    width: 30px;
+    height: 4px;
     transition: 0.6s ease-in-out;
-    &:nth-child(1) {
-      margin-left: -4px;
-      transform: rotate(2deg);
-      background-color: $contactbox;
-    }
-    &:nth-child(2) {
-      margin-left: -12px;
-      background-color: $aboubox;
-      transform: rotate(-7deg);
-      z-index: 1;
-    }
-    &:nth-child(3) {
-      transform: rotate(5deg);
-      background-color: $homebox;
+    background-color: $fontcolor;
+    margin: 1px;
+    &:nth-child(1), &:nth-child(3) {
+      align-self: center;
+      width: 20px;
     }
   }
 }
-.content-menu {
-  position: fixed;
-  opacity: 0;
-  top: 25px;
-  right: 18px;
-  z-index: 8;
-  background-color: $background;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 0 $background, 0 0 0 0 $background;
-  transition: 0.6s cubic-bezier(.19,1,.22,1);
+
+.hidden {
+  animation: menu-hidden-animation 0.3s ease-in-out forwards;
 }
 
-.menu-list {
+.open {
+  animation: menu-open-animation 0.3s ease-in-out forwards;
+}
+
+@keyframes menu-open-animation { 
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes menu-hidden-animation { 
+  from {
+    top: 0;
+  }
+  to {
+    top: -100px;
+  }  
+}
+
+.content-menu {
+  width: 100%;
+  height: 100vh;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 11;
-  opacity: 0;
-  transition: 0.3s cubic-bezier(0, 1.07, 0, 1.02);
-  ul {
-    list-style: none;
-    li {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 50px;
-      a {
-        text-decoration: none;
-        color: $fontcolor;
+  background-color: $background;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  animation: open-menu 0.6s ease-in-out;
+  overflow: hidden;
+  .menu-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    ul {
+      width: 100%;
+      list-style: none;
+      li {
+        opacity: 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 50px;
+        &:nth-child(1) {
+          animation: list-menu-animation 0.3s 0.6s ease-in-out forwards;
+        }
+        &:nth-child(2) {
+          animation: list-menu-animation 0.3s 0.9s ease-in-out forwards;
+        }
+        &:nth-child(3) {
+          animation: list-menu-animation 0.3s 1.2s ease-in-out forwards;
+        }
+        &:nth-child(4) {
+          animation: list-menu-animation 0.3s 1.5s ease-in-out forwards;
+        }
+        a {
+          text-decoration: none;
+          color: $fontcolor;
+        }
       }
     }
+  }
+}
+
+.open {
+  display: flex;
+}
+
+@keyframes list-menu-animation { 
+  0% {
+    opacity: 0;
+    transform: translate3d(100%,0,0);
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+@keyframes open-menu { 
+  from {
+    transform: translate3d(100%,0,0);
+  }
+  to {
+    transform: translate3d(0,0,0);
   }
 }
 

@@ -12,24 +12,40 @@
 
 </head>
 <body>
-  <input id="menu-burguer" type="checkbox">
+  <div style="position: fixed; width: 100%; height: 100vh; overflow: hidden; z-index: 5; mix-blend-mode: difference;">
+    <div class="cursor open-cursor"></div>
+  </div>
+  
+  <nav id="nav" class="nav open">
+    <ul class="nav-list">
+      <li class="nav-list-item" >home</li>
+      <li class="nav-list-item" >about</li>
+      <li class="nav-list-item" >work</li>
+      <li class="nav-list-item" >contact</li>
+      <li class="nav-list-item" >  
+        <input id="menu-burguer" type="checkbox">
+        <label for="menu-burguer">
+          <div class="menu" id="menu">
+            <span class="btn-burguer"></span>
+            <span class="btn-burguer"></span>
+            <span class="btn-burguer"></span>
+          </div>
+        </label>
+      </li>
+    </ul>
+  </nav>
 
-  <label for="menu-burguer">
-    <div class="menu">
-      <span class="btn-burguer"></span>
-      <span class="btn-burguer"></span>
-      <span class="btn-burguer"></span>
-    </div>
-    <div class="content-menu" id="content-menu"></div>
+
+  <div class="content-menu" id="content-menu">
     <div class="menu-list">
       <ul>
-        <li><a href="">home</a></li>
-        <li><a href="">about</a></li>
-        <li><a href="">work</a></li>
-        <li><a href="">contact</a></li>
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">work</a></li>
+        <li><a href="#">contact</a></li>
       </ul>
     </div>
-  </label>
+  </div>
 
   <header class="home">
     <div class="home-content">
