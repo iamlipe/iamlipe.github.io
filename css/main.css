@@ -51,10 +51,11 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
           justify-content: flex-end;
   position: fixed;
   z-index: 10;
+  overflow: hidden;
 }
 
 .nav .nav-list {
-  margin-right: -30px;
+  margin: -20px -30px 0px 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +66,7 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
 
 @media only screen and (min-width: 992px) {
   .nav .nav-list {
-    margin: 0px 50px;
+    margin: -20px 50px;
   }
 }
 
