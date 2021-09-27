@@ -28,3 +28,9 @@
     @content;
   }
 }
+
+@mixin larger-desktops {
+  @media only screen and (min-width: 1500px) {
+    @content;
+  }
+}

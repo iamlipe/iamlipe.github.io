@@ -6,6 +6,7 @@ $aboubox: #8806BF;
 $projectbox: #049DD9;
 $contactbox: #F2BB13;
 $fontcolor: #F1F2F0;
+$workpagebox: #ED6A8F;
 
 @font-face {
   font-family: cool;
@@ -60,10 +61,12 @@ input:checked ~ label .menu .btn-burguer {
     @include laptops {
       margin: -20px 50px;
     }
-    .nav-list-item {
+    .link-nav-item {
+      text-decoration: none;
       display: none;
       margin: 5px 30px; 
       align-self: center;
+      color: $fontcolor;
       &:nth-child(5) {
         display: flex;
         width: 50px; 
@@ -76,6 +79,7 @@ input:checked ~ label .menu .btn-burguer {
         }
       }
     }
+    
   }
 }
 
@@ -363,15 +367,15 @@ input:checked ~ label .menu .btn-burguer {
         // mix-blend-mode:darken;
         @include laptops {
           display: inline-block;
-          font-size: 100px;
+          font-size: 84px;
           &:nth-child(2) {
-            margin: -220px 0px 0px 0px;
+            margin: -230px 0px 0px 0px;
           }
         }
         @include desktops {
-          font-size: 120px;
+          font-size: 96px;
           &:nth-child(2) {
-            margin: -205px 0px 0px 0px;
+            margin: -220px 0px 0px 0px;
           }
         }
       }
@@ -486,9 +490,6 @@ input:checked ~ label .menu .btn-burguer {
         padding: 0px 50px;
         width: 50%;
       }
-      @include desktops {
-        padding: 0px 100px;
-      }
       h3 {
         text-align: center;
         font-size: 12px;
@@ -535,8 +536,6 @@ input:checked ~ label .menu .btn-burguer {
       .about-box {
         display: inline-block;
         align-self: center;
-        // position: absolute;
-        // z-index: 2;
         width: 300px;
         height: 335px;
         background-color: $aboubox;
@@ -570,9 +569,18 @@ input:checked ~ label .menu .btn-burguer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 150vh;
+  height: 100vh;
   width: 100%;
   overflow: hidden;
+  @include phones {
+    height: 120vh;
+  }
+  @include tablets {
+    height: 130vh;
+  }
+  @include laptops {
+    height: 250vh;
+  }
   .work-title {
     height: 7%;
     @include phones {
@@ -614,46 +622,124 @@ input:checked ~ label .menu .btn-burguer {
     justify-content: space-evenly;
     align-content: space-evenly;
     overflow: hidden;
-    margin-top: -10vh;
+    margin-top: 0;
     @include phones {
       margin-top: -10vh;
       width: 85%;
     }
     @include tablets {
-      margin-top: -13vh;
+      margin-top: -5vh;
       width: 83%;
     }
     @include laptops {
-      margin-top: -15vh;
+      margin-top: -20vh;
       width: 80%;
     }
     @include desktops {
-      margin-top: -18vh;
+      margin-top: -25vh;
       width: 78%;
     }
     .work-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       height: 24%;
       background-color: $projectbox;
-      @include phones {
+      cursor: pointer;
+      overflow: hidden;
+      &:nth-child(2) {
+        background-color: $contactbox;
+        background-image: url(../src/p.svg);
+        justify-content: flex-end;
+        padding: 0 10px;
+        @include laptops {
+          padding: 0 50px;
+        }
       }
-      @include tablets {
+      &:nth-child(3) {
+        background-color: #FF6060;
       }
-      @include laptops {
-        width: 48%;
-        height: 48%;
+      &:nth-child(4) {
+        background-color: $homebox;
       }
-      @include desktops {
+      .number-one, .number-two {
+        position: absolute;
+        z-index: 3;
+        top: 10px;
+        left: 10px;
+        color: $projectbox;
+        font-size: 16px;
+        @include laptops {
+          font-size: 24px;
+        }
+      }
+      .number-two {
+        color: $fontcolor;
+      }
+      .wave {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        @include phones {
+          top: -20px;
+        }
+        @include tablets {
+          top: -60px;
+        }
+        @include laptops {
+          top: -40px;
+        }
+        @include desktops {
+          top: -100px;
+        }
+        @include larger-desktops{
+          top: -170px;
+        }
+      }
+
+      .laptop-project-1 {
+        width: 50%;
+        margin: 0 20px;
+        @include tablets {
+          width: 40%;
+          margin: 0 50px;
+        }
+      }
+      .phone-project-1-2 {
+        width: 10%;
+        @include tablets {
+          width: 8%;
+        }
+      }
+      .phone-project-1 {
+        width: 10%;
+        @include tablets {
+          width: 8%;
+        }
+      }
+
+      .phones-middle, .phones-left, .phones-right {
+        height: 100%;
+      }
+
+      .phones-middle {
+        margin: 0 5px;
       }
     }
   }
   .work-see {
     position: absolute;
-    top: 350vh;
+    top: 310vh;
     z-index: 5;
     height: 5%;
+    @include tablets {
+      top: 340vh;
+    }
     @include laptops {
-      top: 370vh;
+      top: 460vh;
     }
   }
 }
@@ -740,8 +826,6 @@ input:checked ~ label .menu .btn-burguer {
       .contact-box {
         display: flex;
         align-self: center;
-        // position: absolute;
-        // z-index: 2;
         width: 300px;
         height: 335px;
         background-color: $contactbox;
@@ -801,7 +885,223 @@ input:checked ~ label .menu .btn-burguer {
   }
 }
 
+.title-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  @include tablets {
+    top: 150px;
+    padding: 0 50px;
+  }
+  @include laptops {
+    top: 200px;
+    padding: 0 100px;
+  }
+  .pink-box {
+    width: 200px;
+    height: 150px;
+    background-color: $projectbox;
+    @include phones {
+      width: 300px;
+    }
+    @include tablets {
+      width: 350px;
+      height: 220px;
+    }
+    @include laptops {
+      width: 400px;
+      height: 250px;
+      margin-left: 0;
+    }
+  }
+  .title-text {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 130px;
+    @include phones {
+    }
+    @include tablets {
+      right: 280px;
+    }
+    @include laptops {
+      right: 350px;
+    }
+
+    h1 {
+      font-size: 42px;
+      @include phones {
+        font-size: 49px;
+      }
+      @include tablets {
+        font-size: 56px;
+      }
+      @include laptops {
+        font-size: 64px
+      }
+      &:nth-child(2) {
+        z-index: 1;
+        color: transparent;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: white;
+        margin: -10px 0;
+        @include tablets {
+          margin: -15px 0;
+        }
+        @include laptops {
+          margin: -18px 0;
+        }
+      }
+    }
+
+  }
+
+}
+
+.pele {
+  position: absolute;
+  right: 0;
+  top: 170px;
+  width: 180px;
+  @include tablets {
+    top: 160px;
+    width: 300px;
+  }
+  @include laptops {
+    top: 190px;
+    right: 50px;
+    width: auto;
+  }
+}
+
+.title-list {
+  width: 100%;
+  margin: 500px 0 0 20px;
+  font-size: 14px;
+  color: $projectbox;
+  @include tablets {
+    font-size: 16px;
+    margin: 700px 0 0 50px;
+  }
+  @include laptops {
+    font-size: 20px;
+  }
+  @include desktops {
+    font-size: 24px;
+  }
+}
+
+.content-project-list {
+  display: flex;
+  margin: 40px 0;
+  height: 30vh;
+  @include tablets {
+    height: 60vh
+  }
+  @include laptops {
+    height: 90vh;
+  }
+  @include desktops {
+    height: 120vh;
+  }
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    overflow: hidden;
+    .item-list {
+      align-self: center;
+      overflow: hidden;
+      font-size: 18px;
+      white-space: nowrap;
+      @include tablets {
+        font-size: 36px;
+      }
+      @include laptops {
+        font-size: 48px;
+      }
+      @include desktops {
+        height: 64px;
+      }
+      li {
+        margin-left: -500px;
+        span {
+          color: transparent;
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-stroke-color: white;
+        }
+      }
+    }
+  }
+}
+
 footer {
+  display: flex;
+  flex-direction: column;
+  .title-social-midia {
+    text-align: center;
+    font-size: 14px;
+    @include tablets {
+      font-size: 16px;
+    }
+    @include laptops {
+      font-size: 20px;
+    }
+    @include desktops {
+      font-size: 24px;
+    }
+  }
+  .content-social-midia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 50px 0;
+    a {
+      &:nth-child(2) {
+        margin: 0 10px 0 10px;
+      }
+      .box-social-midia {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        @include tablets {
+          width: 36px;
+          height: 36px;
+        }
+        @include laptops {
+          width: 42px;
+          height: 42px;
+        }
+        @include desktops {
+          border: 2px solid #FFFFFF;
+          width: 48px;
+          height: 48px;
+        }
+        .icon-social-midia {
+          width: 14px;
+          @include tablets {
+            width: 16px;
+          }
+          @include laptops {
+            width: 20px;
+          }
+          @include desktops {
+            width: 24px;
+          }
+        }
+      }
+    }
+  }
   display: flex;
   justify-content: center;
   padding: 25px;

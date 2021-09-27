@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/scroll.css">
   <link rel="stylesheet" href="./css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,20 +16,22 @@
   
   <nav id="nav" class="nav open">
     <ul class="nav-list">
-      <li class="nav-list-item" >home</li>
-      <li class="nav-list-item" >about</li>
-      <li class="nav-list-item" >work</li>
-      <li class="nav-list-item" >contact</li>
-      <li class="nav-list-item" >  
-        <input id="menu-burguer" type="checkbox">
-        <label for="menu-burguer">
-          <div class="menu" id="menu">
-            <span class="btn-burguer"></span>
-            <span class="btn-burguer"></span>
-            <span class="btn-burguer"></span>
-          </div>
-        </label>
-      </li>
+      <a href="#" class="link-nav-item" ><li class="nav-list-item" >home</li></a>
+      <a href="#about" class="link-nav-item" ><li class="nav-list-item" >about</li></a> 
+      <a href="/work/" class="link-nav-item" ><li class="nav-list-item" >work</li></a>
+      <a href="#contact" class="link-nav-item" ><li class="nav-list-item" >contact</li></a>
+      <a class="link-nav-item" >
+        <li class="nav-list-item" >
+          <input id="menu-burguer" type="checkbox">
+          <label for="menu-burguer">
+            <div class="menu" id="menu">
+              <span class="btn-burguer"></span>
+              <span class="btn-burguer"></span>
+              <span class="btn-burguer"></span>
+            </div>
+          </label>
+        </li>
+      </a>
     </ul>
   </nav>
 
@@ -37,9 +40,9 @@
     <div class="menu-list">
       <ul>
         <li><a href="#">home</a></li>
-        <li><a href="#">about</a></li>
-        <li><a href="#">work</a></li>
-        <li><a href="#">contact</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="/work/">work</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </div>
   </div>
@@ -62,7 +65,7 @@
       </div>
     </div>
   </header>
-  <section class="about">
+  <section class="about" id="about">
     <div class="about-title animateTraslateYTitle">
       <h1 class="lax lax_preset_seesaw:500:-5">about me</h1>
     </div>
@@ -86,8 +89,19 @@
       <h1 class="lax lax_preset_seesaw:500:-5">work</h1>
     </div>
     <div class="work-content animateTraslateYBox">
-      <div class="work-box lax lax_preset_seesaw:500:5"></div>
-      <div class="work-box lax lax_preset_seesaw:500:5"></div>
+      <div class="work-box lax lax_preset_seesaw:500:5">
+        <h1 class="number-one" >1.</h1>
+        <img class="wave" src="./src/header.svg" alt="wave"/>
+        <img class="phone-project-1-2 lax lax_preset_seesaw:200:5 lax_preset_jiggle:200:-5 lax_preset_zigzag:126:5" src="./src/phone-project-1-2.png" alt='project-1' />
+        <img class="laptop-project-1 lax lax_preset_seesaw:200:-5 lax_preset_jiggle:200:5 lax_preset_zigzag:126:-5" src="./src/laptop-project-1.png" alt='project-1' />
+        <img class="phone-project-1 lax lax_preset_seesaw:200:5 lax_preset_jiggle:200:-5 lax_preset_zigzag:126:5" src="./src/phone-project-1.png" alt='project-1' />
+      </div>
+      <div class="work-box lax lax_preset_seesaw:500:5">
+        <h1 class="number-two" >2.</h1>
+        <img class="phones-left" src="./src/phones-project-2-left.svg" alt="project-2" />
+        <img class="phones-middle" src="./src/phones-project-2.svg" alt="project-2" />
+        <img class="phones-right" src="./src/phones-project-2-right.svg" alt="project-2" />
+      </div>
       <div class="work-box lax lax_preset_seesaw:500:5"></div>
       <div class="work-box lax lax_preset_seesaw:500:5"></div>
     </div>
@@ -95,7 +109,7 @@
       <a href="#">see more</a>
     </div>
   </section>
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="contact-title animateTraslateYTitle">
       <h1 class="lax lax_preset_seesaw:500:-5">contact me</h1>
     </div>
@@ -115,6 +129,24 @@
   </section>
   
   <footer>
+    <h3 class="title-social-midia">SOCIAL MIDIA</h3>
+    <section class="content-social-midia">
+      <a href="https://github.com/iamlipe" target="_blank">
+        <div class="box-social-midia">
+          <img class="icon-social-midia" src="./src/github.svg" alt="github" />
+        </div>
+      </a>
+      <a href="https://twitter.com/iam_felima" target="_blank"> 
+        <div class="box-social-midia">
+          <img class="icon-social-midia" src="./src/twitter.svg" alt="github" />
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/iamfelima/" target="_blank">
+        <div class="box-social-midia">
+          <img class="icon-social-midia" src="./src/linkedin.svg" alt="github" />
+        </div>
+      </a>
+    </section>
     <h4>DESIGNED AND DEVELOPED BY FELIPE LIMA © 2021 ALL RIGHTS RESERVED. </h4>
   </footer>
   <script src="/script/lax.min.js"></script>
