@@ -723,6 +723,10 @@ input:checked ~ label .menu .btn-burguer {
 
       .phones-middle, .phones-left, .phones-right {
         height: 100%;
+        @include desktops {
+          height: auto;
+          width: 10%;
+        }
       }
 
       .phones-middle {
@@ -1000,15 +1004,15 @@ input:checked ~ label .menu .btn-burguer {
 .content-project-list {
   display: flex;
   margin: 40px 0;
-  height: 30vh;
+  height: 50vh;
   @include tablets {
-    height: 60vh
+    height: 70vh
   }
   @include laptops {
-    height: 90vh;
+    height: 100vh;
   }
   @include desktops {
-    height: 120vh;
+    height: 130vh;
   }
   .project-list {
     display: flex;

@@ -1146,6 +1146,13 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
   height: 100%;
 }
 
+@media only screen and (min-width: 1200px) {
+  .work .work-content .work-box .phones-middle, .work .work-content .work-box .phones-left, .work .work-content .work-box .phones-right {
+    height: auto;
+    width: 10%;
+  }
+}
+
 .work .work-content .work-box .phones-middle {
   margin: 0 5px;
 }
@@ -1601,24 +1608,24 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
   display: -ms-flexbox;
   display: flex;
   margin: 40px 0;
-  height: 30vh;
+  height: 50vh;
 }
 
 @media only screen and (min-width: 768px) {
   .content-project-list {
-    height: 60vh;
+    height: 70vh;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .content-project-list {
-    height: 90vh;
+    height: 100vh;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .content-project-list {
-    height: 120vh;
+    height: 130vh;
   }
 }
 
