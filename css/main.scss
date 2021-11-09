@@ -423,6 +423,7 @@ input:checked ~ label .menu .btn-burguer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   overflow: hidden;
   .about-title {
     height: 7%;
@@ -441,6 +442,7 @@ input:checked ~ label .menu .btn-burguer {
     h1 {
       font-size: 30px;
       text-transform: uppercase;
+      overflow: visible;
       @include phones {
         font-size: 43px;
       }
@@ -648,14 +650,54 @@ input:checked ~ label .menu .btn-burguer {
       background-color: $projectbox;
       cursor: pointer;
       overflow: hidden;
+      .link-to-project {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: none;
+        color: white;
+        text-decoration: none;
+      }
+      .img-site {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: .3s;
+        h3 {
+          margin: 10px;
+        }
+      }
+      .hover-work-box {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        background-color: #111010;
+        opacity: 0;
+        transition: .3s;
+      }
+      &:hover {
+        .hover-work-box {
+          opacity: .6;
+        }
+        .img-site {
+          opacity: 1;
+        }
+      }
       &:nth-child(2) {
         background-color: $contactbox;
         background-image: url(../src/p.svg);
         justify-content: flex-end;
-        padding: 0 10px;
-        @include laptops {
-          padding: 0 50px;
-        }
       }
       &:nth-child(3) {
         background-color: #FF6060;
@@ -731,6 +773,12 @@ input:checked ~ label .menu .btn-burguer {
 
       .phones-middle {
         margin: 0 5px;
+      }
+      .phones-right {
+        margin-right: 10px;
+        @include laptops {
+          margin-right: 50px;
+        }
       }
     }
   }
@@ -1024,6 +1072,9 @@ input:checked ~ label .menu .btn-burguer {
       overflow: hidden;
       font-size: 18px;
       white-space: nowrap;
+      color: white;
+      text-decoration: none;
+      margin: 6px;
       @include tablets {
         font-size: 36px;
       }
@@ -1113,4 +1164,9 @@ footer {
     text-align: center;
     font-size: 10px;
   }
+}
+
+.font-cook {
+  font-size: 56px;
+  font-family: 'Oregano', cursive;
 }

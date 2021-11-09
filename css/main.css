@@ -622,6 +622,9 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;
 }
 
@@ -656,6 +659,7 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
 .about .about-title h1 {
   font-size: 30px;
   text-transform: uppercase;
+  overflow: visible;
 }
 
 @media only screen and (min-width: 600px) {
@@ -1030,19 +1034,78 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
   overflow: hidden;
 }
 
+.work .work-content .work-box .link-to-project {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-style: none;
+  color: white;
+  text-decoration: none;
+}
+
+.work .work-content .work-box .img-site {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.work .work-content .work-box .img-site h3 {
+  margin: 10px;
+}
+
+.work .work-content .work-box .hover-work-box {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: #111010;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.work .work-content .work-box:hover .hover-work-box {
+  opacity: .6;
+}
+
+.work .work-content .work-box:hover .img-site {
+  opacity: 1;
+}
+
 .work .work-content .work-box:nth-child(2) {
   background-color: #F2BB13;
   background-image: url(../src/p.svg);
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 0 10px;
-}
-
-@media only screen and (min-width: 992px) {
-  .work .work-content .work-box:nth-child(2) {
-    padding: 0 50px;
-  }
 }
 
 .work .work-content .work-box:nth-child(3) {
@@ -1155,6 +1218,16 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
 
 .work .work-content .work-box .phones-middle {
   margin: 0 5px;
+}
+
+.work .work-content .work-box .phones-right {
+  margin-right: 10px;
+}
+
+@media only screen and (min-width: 992px) {
+  .work .work-content .work-box .phones-right {
+    margin-right: 50px;
+  }
 }
 
 .work .work-see {
@@ -1649,6 +1722,9 @@ input:checked ~ label .menu .btn-burguer:nth-child(1) {
   overflow: hidden;
   font-size: 18px;
   white-space: nowrap;
+  color: white;
+  text-decoration: none;
+  margin: 6px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1798,5 +1874,10 @@ footer .content-social-midia a .box-social-midia .icon-social-midia {
 footer h4 {
   text-align: center;
   font-size: 10px;
+}
+
+.font-cook {
+  font-size: 56px;
+  font-family: 'Oregano', cursive;
 }
 /*# sourceMappingURL=main.css.map */
